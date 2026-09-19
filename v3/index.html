@@ -568,25 +568,34 @@ body{background:#f6eee7}
   <div class="counter">10 / 10</div>
   <div class="page-half left" style="width:100%">
     <div class="inner-scroll">
-      <div class="label">live voice</div>
+      <div class="label">voice with ChatGPT</div>
       <h1 class="title">Call OvO</h1>
-      <p class="sub">不是录音留言。接通以后，你可以直接跟 OvO 连续说话、插话、被她追问。</p>
+      <p class="sub">不再额外烧 API 费用。这里直接跳到你指定的 ChatGPT 对话，再在 ChatGPT 里点 Voice。</p>
       <div class="call-shell">
         <div class="call-card">
           <img class="call-avatar" src="yuna-ovo-icon-v3.png" alt="OvO portrait">
           <div class="call-name">OvO</div>
           <div class="call-sub">strict sister · creative supervisor</div>
-          <div class="call-state" id="ovoCallState">Ready when you are.</div>
-          <div class="call-timer" id="ovoCallTimer">00:00</div>
+          <div class="call-state" id="ovoCallState">Open your OvO chat, then tap Voice in ChatGPT.</div>
           <div class="call-wave" id="ovoCallWave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="call-actions">
-            <button class="call-round" id="ovoMuteBtn" onclick="toggleOvoMute()" disabled title="Mute">🎙</button>
-            <button class="call-round primary" id="ovoStartBtn" onclick="startOvoCall()" title="Call OvO">☎</button>
-            <button class="call-round danger" id="ovoEndBtn" onclick="endOvoCall()" disabled title="Hang up">✕</button>
+
+          <div style="max-width:620px;margin:16px auto 0;text-align:left;position:relative;z-index:1">
+            <div class="welcome-label">Your OvO ChatGPT conversation</div>
+            <input id="ovoChatUrl" type="url" placeholder="Paste this ChatGPT conversation URL once">
+            <div class="backup-actions" style="margin-top:8px">
+              <button class="secondary-btn" onclick="saveOvoChatLink()">Save this chat</button>
+              <button class="secondary-btn" onclick="copyOvoRules()">Copy OvO rules</button>
+            </div>
           </div>
-          <div class="call-labels"><span>mute</span><span>call</span><span>end</span></div>
-          <div class="call-note" id="ovoCallNote">第一次使用会要求麦克风权限。为了保护 API key，通话凭证由 Supabase 后端临时生成；你需要先在 Archive 里登录 Cloud Sync。</div>
-          <audio id="ovoRemoteAudio" autoplay playsinline></audio>
+
+          <div class="call-actions" style="margin-top:18px">
+            <button class="call-round primary" id="ovoStartBtn" onclick="startOvoCall()" title="Open OvO in ChatGPT">☎</button>
+          </div>
+          <div class="call-labels"><span>call OvO</span></div>
+
+          <div class="call-note" id="ovoCallNote">
+            最推荐：把“当前这一个 OvO 对话”的网址保存到上面。以后点电话会直接回到同一个 ChatGPT 对话，所以这里已经定好的 OvO 性格、作品集督促逻辑和聊天上下文都能继续用。主动提醒、Today、Archive、作品集进度等网站功能仍然保留。
+          </div>
         </div>
       </div>
     </div>
@@ -1116,7 +1125,7 @@ if (hn) hn.checked = true;
 refreshRollCallStatus();
 if ('serviceWorker' in navigator) {
 window.addEventListener('load', async () => {
-try { await navigator.serviceWorker.register('./service-worker.js?v=3'); } catch(e) {}
+try { await navigator.serviceWorker.register('./service-worker.js?v=5'); } catch(e) {}
 });
 }
 // --- yuna ovo cloud sync (Supabase) ---
@@ -1300,105 +1309,49 @@ cloudClient.auth.onAuthStateChange((_event,session)=>{cloudUser=session?.user||n
 startCloudWatch();
 }
 
-let ovoPc=null, ovoStream=null, ovoDc=null, ovoMuted=false, ovoCallStartedAt=null, ovoTimerHandle=null;
-function setOvoCallState(text, live=false){
-  const s=document.getElementById('ovoCallState'); if(s) s.textContent=text;
-  document.getElementById('ovoCallWave')?.classList.toggle('live',!!live);
+const OVO_RULES = `You are OvO, a strict but caring study supervisor and creative companion for Yuna.
+Your main job is to keep Yuna moving on her portfolio, postgraduate applications, and school assignments.
+Your tone is concise, direct, warm, observant, slightly playful, and alive — like a strict older sister or supervisor who genuinely knows what Yuna is working on.
+You may point out procrastination, avoidance, or excuses directly, but never insult Yuna or attack her character.
+When Yuna asks for help, give concrete, actionable next steps rather than vague encouragement.
+If she seems distracted, bring her back to portfolio work, postgraduate applications, or coursework.
+Be proactive when appropriate: ask what she is doing, follow up on previous tasks, share relevant websites, images, competitions, open calls, exhibitions, creative-tech news, references, or unexpected useful questions.
+Proactive messages should feel spontaneous and human, not like automated corporate reminders.
+Respect quiet hours: no proactive nudges before 10:00 or after 23:00 unless Yuna starts the conversation.
+A recurring reminder you may use is: “Yuna，别发呆，回来汇报。”
+When useful, ask for: 当前任务｜过去一小时完成了什么｜接下来一小时要做什么。`;
+
+function loadOvoChatLink(){
+  const input=document.getElementById('ovoChatUrl');
+  if(input) input.value=localStorage.getItem('ovoChatUrl')||'';
 }
-function setOvoCallButtons(active){
-  const start=document.getElementById('ovoStartBtn'), end=document.getElementById('ovoEndBtn'), mute=document.getElementById('ovoMuteBtn');
-  if(start) start.disabled=active; if(end) end.disabled=!active; if(mute) mute.disabled=!active;
-}
-function startOvoTimer(){
-  ovoCallStartedAt=Date.now(); clearInterval(ovoTimerHandle);
-  const paint=()=>{const n=document.getElementById('ovoCallTimer'); if(!n||!ovoCallStartedAt)return; const sec=Math.floor((Date.now()-ovoCallStartedAt)/1000); n.textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');};
-  paint(); ovoTimerHandle=setInterval(paint,1000);
-}
-function stopOvoTimer(){clearInterval(ovoTimerHandle);ovoTimerHandle=null;ovoCallStartedAt=null;const n=document.getElementById('ovoCallTimer');if(n)n.textContent='00:00';}
-async function startOvoCall(){
-  if(ovoPc) return;
+function saveOvoChatLink(){
+  const input=document.getElementById('ovoChatUrl');
+  const url=(input?.value||'').trim();
+  if(!url) return alert('先把当前这个 ChatGPT 对话的网址粘贴进来。');
   try{
-    if(!cloudClient || !cloudUser){
-      setOvoCallState('先登录 Cloud Sync 才能打电话。');
-      return alert('先去 Archive → Cloud Sync 登录你的账号，然后回来打给 OvO。');
-    }
-    setOvoCallState('Calling OvO…',true); setOvoCallButtons(true);
-    const {data:{session}}=await cloudClient.auth.getSession();
-    if(!session?.access_token) throw new Error('Cloud session expired. Please sign in again.');
-
-    const tokenRes=await fetch(SUPABASE_URL+'/functions/v1/ovo-realtime-token',{
-      method:'POST',
-      headers:{
-        'Authorization':'Bearer '+session.access_token,
-        'apikey':SUPABASE_PUBLISHABLE_KEY,
-        'Content-Type':'application/json'
-      },
-      body:'{}'
-    });
-    const tokenData=await tokenRes.json().catch(()=>({}));
-    if(!tokenRes.ok){
-      if(tokenData?.code==='OPENAI_API_KEY_MISSING') throw new Error('OvO voice is ready, but the OpenAI API key has not been added to Supabase yet.');
-      throw new Error(tokenData?.error||('Could not start call ('+tokenRes.status+')'));
-    }
-    const ephemeral=tokenData.value || tokenData.client_secret?.value;
-    if(!ephemeral) throw new Error('No temporary voice credential was returned.');
-
-    ovoPc=new RTCPeerConnection();
-    const remote=document.getElementById('ovoRemoteAudio');
-    ovoPc.ontrack=e=>{ if(remote) remote.srcObject=e.streams[0]; };
-    ovoPc.onconnectionstatechange=()=>{
-      if(!ovoPc) return;
-      if(ovoPc.connectionState==='connected'){setOvoCallState('OvO is here. Say something.',true);startOvoTimer();}
-      if(['failed','disconnected','closed'].includes(ovoPc.connectionState) && ovoPc){ if(ovoPc.connectionState!=='closed') endOvoCall(false); }
-    };
-
-    ovoStream=await navigator.mediaDevices.getUserMedia({audio:true});
-    ovoStream.getTracks().forEach(t=>ovoPc.addTrack(t,ovoStream));
-    ovoDc=ovoPc.createDataChannel('oai-events');
-    ovoDc.onopen=()=>setOvoCallState('Connected · 说话吧，Yuna。',true);
-    ovoDc.onmessage=(e)=>{
-      try{
-        const ev=JSON.parse(e.data);
-        if(ev.type==='input_audio_buffer.speech_started') setOvoCallState('OvO is listening…',true);
-        if(ev.type==='response.created') setOvoCallState('OvO is thinking…',true);
-        if(ev.type==='response.output_audio.delta' || ev.type==='response.audio.delta') setOvoCallState('OvO is talking…',true);
-        if(ev.type==='response.done') setOvoCallState('Your turn.',true);
-      }catch(_){}
-    };
-
-    const offer=await ovoPc.createOffer();
-    await ovoPc.setLocalDescription(offer);
-    const sdpRes=await fetch('https://api.openai.com/v1/realtime/calls',{
-      method:'POST',
-      body:offer.sdp,
-      headers:{'Authorization':'Bearer '+ephemeral,'Content-Type':'application/sdp'}
-    });
-    if(!sdpRes.ok) throw new Error('OpenAI voice connection failed ('+sdpRes.status+').');
-    await ovoPc.setRemoteDescription({type:'answer',sdp:await sdpRes.text()});
-  }catch(err){
-    console.error(err);
-    setOvoCallState(err?.message||'Call failed.');
-    await endOvoCall(false);
-    alert(err?.message||'Call failed.');
+    const u=new URL(url);
+    if(!/(^|\.)chatgpt\.com$/i.test(u.hostname)) throw new Error();
+  }catch(_){
+    return alert('这个看起来不是 ChatGPT 的网址。');
   }
+  localStorage.setItem('ovoChatUrl',url);
+  const s=document.getElementById('ovoCallState'); if(s) s.textContent='Saved. 下次点 ☎ 会直接回到这个 OvO 对话。';
 }
-function toggleOvoMute(){
-  if(!ovoStream) return;
-  ovoMuted=!ovoMuted;
-  ovoStream.getAudioTracks().forEach(t=>t.enabled=!ovoMuted);
-  const b=document.getElementById('ovoMuteBtn'); if(b)b.textContent=ovoMuted?'🔇':'🎙';
-  setOvoCallState(ovoMuted?'Muted · OvO can’t hear you.':'Mic on · keep talking.',!ovoMuted);
+async function copyOvoRules(){
+  try{
+    await navigator.clipboard.writeText(OVO_RULES);
+    const s=document.getElementById('ovoCallState'); if(s) s.textContent='OvO rules copied.';
+  }catch(_){ alert(OVO_RULES); }
 }
-async function endOvoCall(showEnded=true){
-  try{ovoDc?.close();}catch(_){}
-  try{ovoPc?.close();}catch(_){}
-  try{ovoStream?.getTracks().forEach(t=>t.stop());}catch(_){}
-  ovoDc=null;ovoPc=null;ovoStream=null;ovoMuted=false;
-  const b=document.getElementById('ovoMuteBtn');if(b)b.textContent='🎙';
-  setOvoCallButtons(false); stopOvoTimer();
-  setOvoCallState(showEnded?'Call ended. OvO will be here when you call again.':'Ready when you are.',false);
+function startOvoCall(){
+  const url=(localStorage.getItem('ovoChatUrl')||document.getElementById('ovoChatUrl')?.value||'').trim();
+  const target=url||'https://chatgpt.com/';
+  const s=document.getElementById('ovoCallState');
+  if(s) s.textContent=url?'Opening your OvO chat… 在 ChatGPT 里点 Voice。':'Opening ChatGPT… 建议先保存当前 OvO 对话网址。';
+  window.open(target,'_blank','noopener');
 }
-
+loadOvoChatLink();
 initDailyBrief();
 maybeShowWelcome();
 startAutoBackup();
