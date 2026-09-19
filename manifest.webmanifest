@@ -10,16 +10,10 @@
   "description": "Yuna Studio Book — portfolio, applications, daily brief and cloud sync.",
   "icons": [
     {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
+      "src": "./yuna-ovo-icon-v2.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
