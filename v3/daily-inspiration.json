@@ -1,0 +1,70 @@
+{
+  "date": "19 Sep 2026",
+  "hero": "今天这一组很适合你：代码艺术 + 实验动画 + 一个真的能投的学生动画比赛。",
+  "items": [
+    {
+      "category": "CODE / FESTIVAL",
+      "title": "Responsive Dreams 2026",
+      "summary": "Barcelona 的数字艺术节，核心就是 art created by code：生成算法、沉浸装置、live coding、表演。",
+      "why": "你现在正卡在“互动网页怎么不只是好看，而是形成体验逻辑”。这个项目能让你看代码如何变成空间、节奏和参与。",
+      "action": "别刷完整网站。只找 1 个作品，拆成：输入 → 变化规则 → 视觉结果。",
+      "url": "https://responsivedreams.com/"
+    },
+    {
+      "category": "SHORT FILM",
+      "title": "Display Nature — Nicolas Gebbe",
+      "summary": "9 分钟实验动画，把 CGI 拼贴、摄影测量和真实影像混在一起，讨论数字空间怎样重塑我们对“自然”的想象。",
+      "why": "和你的香、植物、材料形态变化非常贴。重点看它怎样让真实材料和人工数字感同时存在。",
+      "action": "截 3 个你喜欢的转场/构图，问自己：我的植物形态变化能不能也不是‘变形动画’，而是空间认知变化？",
+      "url": "https://squareeyesfilm.com/shorts/display-nature/"
+    },
+    {
+      "category": "CREATIVE CODING",
+      "title": "p5.js + shader: when 2D interface meets WebGL",
+      "summary": "Processing 社区最近在讨论 p5.js WebGL2、shader 和 GUI 同时运行时的冲突与崩溃。",
+      "why": "你以后做更复杂的气味流体、扫描、深度和交互时一定会碰到‘视觉想法很美，但 GPU / 渲染管线不听话’。",
+      "action": "今天只学一个词：shader。知道它是在 GPU 上处理像素/顶点的程序，就够了。",
+      "url": "https://discourse.processing.org/t/p5js-inconsistent-shader-behaviour-leading-to-program-crashes/49386"
+    },
+    {
+      "category": "EXHIBITION / NEWS",
+      "title": "V&A Digital Design Weekend 2026",
+      "summary": "V&A South Kensington 的免费数字设计周末，把装置、表演、workshop 和 emerging tech 放在一起。今年的主项目讨论濒危植物、记忆、消失与技术。",
+      "why": "‘植物 + 记忆 + 技术如何保存正在消失的东西’几乎直接击中你的香与地域材料项目。",
+      "action": "不要只看作品图。找它的 curatorial question，抄下它是怎么把技术和 care / ecology 连起来的。",
+      "url": "https://www.vam.ac.uk/blog/digital/digital-design-weekend-returns-to-va-south-kensington-this-september"
+    },
+    {
+      "category": "COMPETITION",
+      "title": "Animex Screen 2026",
+      "summary": "Teesside University 的动画竞赛；国际本科生可投 2D、CG、VFX、stop-motion 等类别，Regular deadline 30 Oct 2026，页面显示本科类别免费。",
+      "why": "这比那些职业大神扎堆的综合电影节更贴你：你现在就是本科 Animation & Illustration，可以拿毕业动画或课程作品准备。",
+      "action": "先别报名。今天只做资格检查：片长、完成年份、是否允许课程作品；符合再放进你的比赛清单。",
+      "deadline": "30 Oct 2026",
+      "url": "https://filmfreeway.com/AnimexAwards"
+    },
+    {
+      "category": "WILDCARD",
+      "title": "Fen to Fire — Flag Fen",
+      "summary": "把 3000 年前 Must Farm 聚落用 3D、动作捕捉和 AI 重建成沉浸数字装置，9 月 23 日起在 Flag Fen 展出。",
+      "why": "它示范了‘地方文化 / 历史材料’不是只能做纪录片，可以被重构成可进入的数字世界。对你想做地域文化非常有用。",
+      "action": "只问一个问题：如果把常州的材料做成‘可以进入的记忆场’，观众进入后第一件发生的事是什么？",
+      "url": "https://flagfen.org.uk/events/fen-to-fire"
+    }
+  ],
+  "word": {
+    "word": "liminal",
+    "pronunciation": "/ˈlɪmɪnəl/",
+    "meaning": "处在两个状态、空间或阶段之间的；阈限的。",
+    "example": "The installation creates a liminal space between memory, scent and digital reconstruction.",
+    "prompt": "用 liminal 写一句你的香项目介绍，不准用 interesting / beautiful。"
+  },
+  "history": [
+    "Responsive Dreams 2026",
+    "Display Nature — Nicolas Gebbe",
+    "p5.js + shader: when 2D interface meets WebGL",
+    "V&A Digital Design Weekend 2026",
+    "Animex Screen 2026",
+    "Fen to Fire — Flag Fen"
+  ]
+}
