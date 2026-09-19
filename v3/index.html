@@ -769,7 +769,7 @@ body{background:#f6eee7}
         </div>
 
         <div class="call-note">
-          这里不是另一个新机器人。它只是把你送回我们现在这一个 ChatGPT 对话，所以之前的 OvO 规则、作品集上下文和语音入口都继续在同一个地方。真正“在网页里直接聊天”仍然需要单独 API。
+          这里不会再默认打开 ChatGPT 首页。我已经把“新聊天兜底”关掉了：只有保存了包含 /c/ 的具体对话链接，Chat / Call 才会打开。
         </div>
       </div>
     </div>
@@ -793,7 +793,7 @@ body{background:#f6eee7}
 
           <div style="max-width:620px;margin:16px auto 0;text-align:left;position:relative;z-index:1">
             <div class="welcome-label">Your OvO ChatGPT conversation</div>
-            <input id="ovoChatUrl" type="url" placeholder="Paste this ChatGPT conversation URL once">
+            <input id="ovoChatUrl" type="url" placeholder="必须粘贴当前这一个聊天的网址，例如 https://chatgpt.com/c/...">
             <div class="backup-actions" style="margin-top:8px">
               <button class="secondary-btn" onclick="saveOvoChatLink()">Save this chat</button>
               <button class="secondary-btn" onclick="copyOvoRules()">Copy OvO rules</button>
@@ -806,7 +806,7 @@ body{background:#f6eee7}
           <div class="call-labels"><span>call OvO</span></div>
 
           <div class="call-note" id="ovoCallNote">
-            最推荐：把“当前这一个 OvO 对话”的网址保存到上面。以后点电话会直接回到同一个 ChatGPT 对话，所以这里已经定好的 OvO 性格、作品集督促逻辑和聊天上下文都能继续用。主动提醒、Today、Archive、作品集进度等网站功能仍然保留。
+            重要：这里必须保存“当前这一个聊天”的完整网址（地址栏里通常包含 /c/）。不能只填 chatgpt.com 首页；否则一定会开新聊天。保存一次后，这个链接也会跟着 Cloud Sync 到你的其他设备。
           </div>
         </div>
       </div>
@@ -1337,7 +1337,7 @@ if (hn) hn.checked = true;
 refreshRollCallStatus();
 if ('serviceWorker' in navigator) {
 window.addEventListener('load', async () => {
-try { await navigator.serviceWorker.register('./service-worker.js?v=8'); } catch(e) {}
+try { await navigator.serviceWorker.register('./service-worker.js?v=9'); } catch(e) {}
 });
 }
 // --- yuna ovo cloud sync (Supabase) ---
@@ -1537,18 +1537,23 @@ function loadOvoChatLink(){
   const input=document.getElementById('ovoChatUrl');
   if(input) input.value=localStorage.getItem('ovoChatUrl')||'';
 }
+function isExactChatUrl(url){
+  try{
+    const u=new URL(url);
+    if(!/(^|\.)chatgpt\.com$/i.test(u.hostname)) return false;
+    return /\/c\/[a-zA-Z0-9-]+/.test(u.pathname);
+  }catch(_){ return false; }
+}
 function saveOvoChatLink(){
   const input=document.getElementById('ovoChatUrl');
   const url=(input?.value||'').trim();
-  if(!url) return alert('先把当前这个 ChatGPT 对话的网址粘贴进来。');
-  try{
-    const u=new URL(url);
-    if(!/(^|\.)chatgpt\.com$/i.test(u.hostname)) throw new Error();
-  }catch(_){
-    return alert('这个看起来不是 ChatGPT 的网址。');
+  if(!url) return alert('先把“当前这个聊天”的地址栏网址粘贴进来。');
+  if(!isExactChatUrl(url)){
+    return alert('这个不是具体聊天链接。请在现在这一个 OvO 聊天页面复制地址栏完整网址，通常会包含 /c/。不要只复制 chatgpt.com 首页。');
   }
   localStorage.setItem('ovoChatUrl',url);
-  const s=document.getElementById('ovoCallState'); if(s) s.textContent='Saved. 下次点 ☎ 会直接回到这个 OvO 对话。';
+  if(typeof markCloudLocalDirty==='function') markCloudLocalDirty();
+  const s=document.getElementById('ovoCallState'); if(s) s.textContent='Saved ✓ 以后 Chat / Call 都会回到这个同一个 OvO 对话。';
 }
 async function copyOvoRules(){
   try{
@@ -1558,10 +1563,13 @@ async function copyOvoRules(){
 }
 function startOvoCall(){
   const url=(localStorage.getItem('ovoChatUrl')||document.getElementById('ovoChatUrl')?.value||'').trim();
-  const target=url||'https://chatgpt.com/';
   const s=document.getElementById('ovoCallState');
-  if(s) s.textContent=url?'Opening your OvO chat… 在 ChatGPT 里点 Voice。':'Opening ChatGPT… 建议先保存当前 OvO 对话网址。';
-  window.open(target,'_blank','noopener');
+  if(!isExactChatUrl(url)){
+    if(s) s.textContent='还没有保存“这个聊天”的具体链接。';
+    return alert('我已经禁止它再打开新聊天了。\n\n请先复制你现在这个 OvO 对话的地址栏完整网址（通常包含 /c/），粘贴到 Call 页面并点 Save this chat。');
+  }
+  if(s) s.textContent='Opening the same OvO chat…';
+  window.open(url,'_blank','noopener');
 }
 loadOvoChatLink();
 
