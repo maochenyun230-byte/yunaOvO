@@ -1,63 +1,63 @@
 {
-  "date": "19 Sep 2026",
-  "hero": "今天这一组很适合你：代码艺术 + 实验动画 + 一个真的能投的学生动画比赛。",
+  "date": "20 Sep 2026",
+  "hero": "今天重点看‘感知如何变成交互’：从手伸进土壤触发声音，到一张画布如何在动画里真正活起来。",
   "items": [
     {
-      "category": "CODE / FESTIVAL",
-      "title": "Responsive Dreams 2026",
-      "summary": "Barcelona 的数字艺术节，核心就是 art created by code：生成算法、沉浸装置、live coding、表演。",
-      "why": "你现在正卡在“互动网页怎么不只是好看，而是形成体验逻辑”。这个项目能让你看代码如何变成空间、节奏和参与。",
-      "action": "别刷完整网站。只找 1 个作品，拆成：输入 → 变化规则 → 视觉结果。",
-      "url": "https://responsivedreams.com/"
+      "category": "INTERACTIVE ART",
+      "title": "The Soil Sounds Back — Emily Stapleton-Jefferis",
+      "summary": "V&A 的互动装置：观众把手伸进土壤，动作传感器会触发根系、昆虫、微生物和水流的声音，让地下生态从不可见变成可感知。",
+      "why": "这和你现在的香项目非常接近：材料不是被介绍，而是成为触发体验的入口。它证明‘触摸 → 感知 → 声音反馈’本身就能构成作品。",
+      "action": "画一张它的交互逻辑：hand → sensor → hidden soil sound。再旁边画你的版本：cursor/body → scent perception → visual trace。",
+      "url": "https://www.vam.ac.uk/event/y7y7b2gAYmp/the-soil-sounds-back-emily-stapleton-jefferis-sep-2026"
     },
     {
       "category": "SHORT FILM",
-      "title": "Display Nature — Nicolas Gebbe",
-      "summary": "9 分钟实验动画，把 CGI 拼贴、摄影测量和真实影像混在一起，讨论数字空间怎样重塑我们对“自然”的想象。",
-      "why": "和你的香、植物、材料形态变化非常贴。重点看它怎样让真实材料和人工数字感同时存在。",
-      "action": "截 3 个你喜欢的转场/构图，问自己：我的植物形态变化能不能也不是‘变形动画’，而是空间认知变化？",
-      "url": "https://squareeyesfilm.com/shorts/display-nature/"
+      "title": "Creation — Béla Klingl",
+      "summary": "2026 Annecy Vimeo Staff Pick Award 获奖动画，从一张画布如何‘活起来’出发，让抽象形态不断生成，并把创作过程本身变成叙事。",
+      "why": "它很适合你看‘抽象视觉怎么有故事’：不靠传统角色对白，也能通过形态出现、关系和节奏建立情绪。",
+      "action": "看完只截 3 帧：诞生、变化、关系形成。用同样三阶段测试你的气味视觉是否也有叙事弧线。",
+      "url": "https://vimeo.com/1200464893"
     },
     {
       "category": "CREATIVE CODING",
-      "title": "p5.js + shader: when 2D interface meets WebGL",
-      "summary": "Processing 社区最近在讨论 p5.js WebGL2、shader 和 GUI 同时运行时的冲突与崩溃。",
-      "why": "你以后做更复杂的气味流体、扫描、深度和交互时一定会碰到‘视觉想法很美，但 GPU / 渲染管线不听话’。",
-      "action": "今天只学一个词：shader。知道它是在 GPU 上处理像素/顶点的程序，就够了。",
-      "url": "https://discourse.processing.org/t/p5js-inconsistent-shader-behaviour-leading-to-program-crashes/49386"
+      "title": "p5.js 2.0 is now the default editor version",
+      "summary": "p5.js 的官方迁移时间线显示，2.0 已从 2026 年 8 月起成为 Web Editor 默认版本；1.x 在 2026 年 3 月后停止常规更新。",
+      "why": "你正在用 p5.js 做互动视觉，继续找旧教程时很容易遇到 API 差异。现在开始把实验建立在 2.0 上，会少很多莫名其妙的兼容问题。",
+      "action": "打开你一个旧 sketch，在 2.0 跑一次；只记录报错和视觉差异，不急着重写。",
+      "url": "https://github.com/processing/p5.js/issues/7488"
     },
     {
-      "category": "EXHIBITION / NEWS",
-      "title": "V&A Digital Design Weekend 2026",
-      "summary": "V&A South Kensington 的免费数字设计周末，把装置、表演、workshop 和 emerging tech 放在一起。今年的主项目讨论濒危植物、记忆、消失与技术。",
-      "why": "‘植物 + 记忆 + 技术如何保存正在消失的东西’几乎直接击中你的香与地域材料项目。",
-      "action": "不要只看作品图。找它的 curatorial question，抄下它是怎么把技术和 care / ecology 连起来的。",
-      "url": "https://www.vam.ac.uk/blog/digital/digital-design-weekend-returns-to-va-south-kensington-this-september"
+      "category": "EXHIBITION / TODAY",
+      "title": "Goldsmiths Creative Technology Showcase at V&A",
+      "summary": "Goldsmiths Computational Arts 学生的创意科技作品展今天 20 Sep 是最后一天，属于 V&A Digital Design Weekend，免费。",
+      "why": "这比看成熟艺术家更适合作品集对标：你能直接观察研究生层级怎样把 coding、交互、概念和展示形式合成一个完整项目。",
+      "action": "如果今天人在伦敦且时间合适就去；否则看项目名单，挑 1 个查它如何写 concept、interaction 和 outcome。",
+      "url": "https://www.vam.ac.uk/event/dbzZy336bv/goldsmiths-creative-technology-showcase-sep-2026"
     },
     {
-      "category": "COMPETITION",
-      "title": "Animex Screen 2026",
-      "summary": "Teesside University 的动画竞赛；国际本科生可投 2D、CG、VFX、stop-motion 等类别，Regular deadline 30 Oct 2026，页面显示本科类别免费。",
-      "why": "这比那些职业大神扎堆的综合电影节更贴你：你现在就是本科 Animation & Illustration，可以拿毕业动画或课程作品准备。",
-      "action": "先别报名。今天只做资格检查：片长、完成年份、是否允许课程作品；符合再放进你的比赛清单。",
-      "deadline": "30 Oct 2026",
-      "url": "https://filmfreeway.com/AnimexAwards"
+      "category": "OPEN CALL",
+      "title": "ANITIME Animation Festival 2026",
+      "summary": "国际动画类别目前免费投稿，接受国际动画作品；Final Deadline 是 5 Nov 2026，12 月举办。",
+      "why": "它没有限定专业团队，也没有昂贵报名费，对你这种本科、个人动画作者比很多职业电影节现实得多。",
+      "action": "把你最完整的一支课程动画拿出来检查片尾、字幕、导出规格；如果完成度够，就把 5 Nov 放进比赛日历。",
+      "url": "https://filmfreeway.com/anitime",
+      "deadline": "5 Nov 2026"
     },
     {
-      "category": "WILDCARD",
-      "title": "Fen to Fire — Flag Fen",
-      "summary": "把 3000 年前 Must Farm 聚落用 3D、动作捕捉和 AI 重建成沉浸数字装置，9 月 23 日起在 Flag Fen 展出。",
-      "why": "它示范了‘地方文化 / 历史材料’不是只能做纪录片，可以被重构成可进入的数字世界。对你想做地域文化非常有用。",
-      "action": "只问一个问题：如果把常州的材料做成‘可以进入的记忆场’，观众进入后第一件发生的事是什么？",
-      "url": "https://flagfen.org.uk/events/fen-to-fire"
+      "category": "WILDCARD / MEDIA HISTORY",
+      "title": "Laguna Obscura — Sara Tirelli",
+      "summary": "Ars Electronica 2026 的 Deep Space 8K 作品从 magic lantern 和 phantasmagoria 的早期沉浸史出发，把威尼斯潟湖变成由档案碎片、幻影、记忆构成的 living archive。",
+      "why": "它提醒你：immersive 不是‘投影越大越未来’，今天的数字沉浸可以和几百年前的幻灯、幽灵影像、档案史连接。",
+      "action": "查 magic lantern / phantasmagoria 各 1 张历史图，再想：你的气味网站有没有一种前数字时代的视觉祖先？",
+      "url": "https://ars.electronica.art/negotiatinghumanity/en/view/laguna-obscura-39038ddb450c808583ede17db20b07cf/"
     }
   ],
   "word": {
-    "word": "liminal",
-    "pronunciation": "/ˈlɪmɪnəl/",
-    "meaning": "处在两个状态、空间或阶段之间的；阈限的。",
-    "example": "The installation creates a liminal space between memory, scent and digital reconstruction.",
-    "prompt": "用 liminal 写一句你的香项目介绍，不准用 interesting / beautiful。"
+    "word": "mediate",
+    "pronunciation": "/ˈmiːdieɪt/",
+    "meaning": "作为中介、调节或影响两者之间的关系；在艺术评论中常指媒介如何塑造体验。",
+    "example": "The interface mediates between an invisible scent perception and its visual trace.",
+    "prompt": "用 mediate 写一句：你的网页如何连接观众和气味感知？"
   },
   "history": [
     "Responsive Dreams 2026",
@@ -65,6 +65,12 @@
     "p5.js + shader: when 2D interface meets WebGL",
     "V&A Digital Design Weekend 2026",
     "Animex Screen 2026",
-    "Fen to Fire — Flag Fen"
+    "Fen to Fire — Flag Fen",
+    "Responsive Dreams 2026 | https://responsivedreams.com/",
+    "Display Nature — Nicolas Gebbe | https://squareeyesfilm.com/shorts/display-nature/",
+    "p5.js + shader: when 2D interface meets WebGL | https://discourse.processing.org/t/p5js-inconsistent-shader-behaviour-leading-to-program-crashes/49386",
+    "V&A Digital Design Weekend 2026 | https://www.vam.ac.uk/blog/digital/digital-design-weekend-returns-to-va-south-kensington-this-september",
+    "Animex Screen 2026 | https://filmfreeway.com/AnimexAwards",
+    "Fen to Fire — Flag Fen | https://flagfen.org.uk/events/fen-to-fire"
   ]
 }
