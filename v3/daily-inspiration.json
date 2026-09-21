@@ -1,76 +1,76 @@
 {
-  "date": "20 Sep 2026",
-  "hero": "今天重点看‘感知如何变成交互’：从手伸进土壤触发声音，到一张画布如何在动画里真正活起来。",
+  "date": "21 Sep 2026",
+  "hero": "今天看‘让媒介本身成为作品’：建筑可以被观众演奏，身体与文化记忆可以进入数字空间，而动画的情绪也可以只靠天气、空间和节奏发生。",
   "items": [
     {
       "category": "INTERACTIVE ART",
-      "title": "The Soil Sounds Back — Emily Stapleton-Jefferis",
-      "summary": "V&A 的互动装置：观众把手伸进土壤，动作传感器会触发根系、昆虫、微生物和水流的声音，让地下生态从不可见变成可感知。",
-      "why": "这和你现在的香项目非常接近：材料不是被介绍，而是成为触发体验的入口。它证明‘触摸 → 感知 → 声音反馈’本身就能构成作品。",
-      "action": "画一张它的交互逻辑：hand → sensor → hidden soil sound。再旁边画你的版本：cursor/body → scent perception → visual trace。",
-      "url": "https://www.vam.ac.uk/event/y7y7b2gAYmp/the-soil-sounds-back-emily-stapleton-jefferis-sep-2026"
+      "title": "Play the Façade — Ars Electronica Futurelab",
+      "summary": "观众用自己的手机连接 Ars Electronica Center，本地 Wi-Fi 把建筑外墙超过 40,000 颗 LED 变成可实时控制的视听界面。",
+      "why": "很适合你研究‘网页不是展示页，而是一件可被操纵的作品’：普通手机就是入口，城市建筑则成为反馈媒介。",
+      "action": "画一张 input → transformation → public output 图，再把建筑换成你的植物或气味视觉，测试同一逻辑。",
+      "url": "https://ars.electronica.art/negotiatinghumanity/en/view/play-the-facade-38838ddb450c80049ff9d604c744fe53/"
     },
     {
       "category": "SHORT FILM",
-      "title": "Creation — Béla Klingl",
-      "summary": "2026 Annecy Vimeo Staff Pick Award 获奖动画，从一张画布如何‘活起来’出发，让抽象形态不断生成，并把创作过程本身变成叙事。",
-      "why": "它很适合你看‘抽象视觉怎么有故事’：不靠传统角色对白，也能通过形态出现、关系和节奏建立情绪。",
-      "action": "看完只截 3 帧：诞生、变化、关系形成。用同样三阶段测试你的气味视觉是否也有叙事弧线。",
-      "url": "https://vimeo.com/1200464893"
+      "title": "BALCONADA — Iva Tokmakchieva",
+      "summary": "2026 Aspen Shortsfest Vimeo Staff Pick Award 动画，用闷热、阳台和突然的暴雨，把外部天气压力与人物内部情绪连接起来。",
+      "why": "它值得你看环境如何代替对白：空间、天气、群体反应和节奏共同推动情绪，这对你的毕业动画和治愈叙事都很有用。",
+      "action": "看完挑 3 个没有对白也能读懂情绪的镜头，分别标出构图、动作和环境变化是谁在讲故事。",
+      "url": "https://vimeo.com/1179947837"
     },
     {
-      "category": "CREATIVE CODING",
-      "title": "p5.js 2.0 is now the default editor version",
-      "summary": "p5.js 的官方迁移时间线显示，2.0 已从 2026 年 8 月起成为 Web Editor 默认版本；1.x 在 2026 年 3 月后停止常规更新。",
-      "why": "你正在用 p5.js 做互动视觉，继续找旧教程时很容易遇到 API 差异。现在开始把实验建立在 2.0 上，会少很多莫名其妙的兼容问题。",
-      "action": "打开你一个旧 sketch，在 2.0 跑一次；只记录报错和视觉差异，不急着重写。",
-      "url": "https://github.com/processing/p5.js/issues/7488"
+      "category": "CREATIVE TECHNOLOGY",
+      "title": "WebGPU — W3C Candidate Recommendation Draft",
+      "summary": "W3C 在 1 Sep 2026 发布新的 WebGPU Candidate Recommendation Draft；它让浏览器更直接地使用 GPU 做实时图形与计算。",
+      "why": "对你不是要立刻学底层 API，而是理解网页端粒子、流体、实时 3D 和高密度交互为什么正在变得更可行。",
+      "action": "记住 WebGPU 这个词；下一次找 three.js 粒子或实时 3D 参考时，额外搜索 WebGPU / compute shader，看视觉上多了什么可能。",
+      "url": "https://www.w3.org/TR/webgpu/"
     },
     {
-      "category": "EXHIBITION / TODAY",
-      "title": "Goldsmiths Creative Technology Showcase at V&A",
-      "summary": "Goldsmiths Computational Arts 学生的创意科技作品展今天 20 Sep 是最后一天，属于 V&A Digital Design Weekend，免费。",
-      "why": "这比看成熟艺术家更适合作品集对标：你能直接观察研究生层级怎样把 coding、交互、概念和展示形式合成一个完整项目。",
-      "action": "如果今天人在伦敦且时间合适就去；否则看项目名单，挑 1 个查它如何写 concept、interaction 和 outcome。",
-      "url": "https://www.vam.ac.uk/event/dbzZy336bv/goldsmiths-creative-technology-showcase-sep-2026"
+      "category": "EXHIBITION",
+      "title": "SLIPSTREAM: Uncharted Realities & the Eternal Now — arebyte",
+      "summary": "arebyte Digital Art Centre 的新群展以影像和雕塑装置讨论文化遗产、原住民知识与非西方未来想象，9 月 17 日刚开幕。",
+      "why": "它和你‘传统香文化 × 数字媒介’最有价值的连接不是视觉风格，而是：传统不必被做成复古展示，它可以成为想象未来的系统。",
+      "action": "看展览介绍后写一句：如果不把香文化当 heritage object，而当 future-making tool，我的项目会发生什么变化？",
+      "url": "https://www.arebyte.com/whats-on"
     },
     {
       "category": "OPEN CALL",
-      "title": "ANITIME Animation Festival 2026",
-      "summary": "国际动画类别目前免费投稿，接受国际动画作品；Final Deadline 是 5 Nov 2026，12 月举办。",
-      "why": "它没有限定专业团队，也没有昂贵报名费，对你这种本科、个人动画作者比很多职业电影节现实得多。",
-      "action": "把你最完整的一支课程动画拿出来检查片尾、字幕、导出规格；如果完成度够，就把 5 Nov 放进比赛日历。",
-      "url": "https://filmfreeway.com/anitime",
-      "deadline": "5 Nov 2026"
+      "title": "Animation Dingle 2027 StINGs — MOVE ME",
+      "summary": "面向学生的动画短片 pitch 征集已于 16 Sep 开放；先交 pitch 而不是成片，入选后制作 20–40 秒 festival sting。主题是 MOVE ME。",
+      "why": "这个比职业电影节更适合你现在：只限学生、可以个人做，而且 storyboard、concept art、animatic 都能进入 pitch，和你现有能力高度匹配。",
+      "action": "先不做成片：用 30 分钟想 3 个 MOVE ME 概念，每个只写一句视觉机制；有一个够强再画 6 格 storyboard。",
+      "url": "https://animationdingle.com/stings/",
+      "deadline": "23 Oct 2026"
     },
     {
-      "category": "WILDCARD / MEDIA HISTORY",
-      "title": "Laguna Obscura — Sara Tirelli",
-      "summary": "Ars Electronica 2026 的 Deep Space 8K 作品从 magic lantern 和 phantasmagoria 的早期沉浸史出发，把威尼斯潟湖变成由档案碎片、幻影、记忆构成的 living archive。",
-      "why": "它提醒你：immersive 不是‘投影越大越未来’，今天的数字沉浸可以和几百年前的幻灯、幽灵影像、档案史连接。",
-      "action": "查 magic lantern / phantasmagoria 各 1 张历史图，再想：你的气味网站有没有一种前数字时代的视觉祖先？",
-      "url": "https://ars.electronica.art/negotiatinghumanity/en/view/laguna-obscura-39038ddb450c808583ede17db20b07cf/"
+      "category": "WILDCARD / VISUAL CULTURE",
+      "title": "This Is Still Not a Pipe: The Afterlife of Magritte",
+      "summary": "Gagosian London 24 Sep 开幕，把 Magritte 与四十多位跨世代艺术家并置，追踪苹果、烟斗、云等简单视觉符号如何持续被重新编码。",
+      "why": "对插画和交互都很重要：真正强的视觉系统不一定元素很多，而是少量符号拥有稳定规则，又能在不同语境里不断变义。",
+      "action": "从你自己的项目选 1 个符号，例如植物、裂缝或粒子，画 6 种完全不同语境；不增加新元素，只改变关系和含义。",
+      "url": "https://gagosian.com/exhibitions/2026/this-is-still-not-a-pipe-the-afterlife-of-magritte/"
     }
   ],
   "word": {
-    "word": "mediate",
-    "pronunciation": "/ˈmiːdieɪt/",
-    "meaning": "作为中介、调节或影响两者之间的关系；在艺术评论中常指媒介如何塑造体验。",
-    "example": "The interface mediates between an invisible scent perception and its visual trace.",
-    "prompt": "用 mediate 写一句：你的网页如何连接观众和气味感知？"
+    "word": "recontextualise",
+    "pronunciation": "/ˌriːkənˈtekstʃuəlaɪz/",
+    "meaning": "重新置于新的语境中理解或呈现；艺术评论里常用于说明旧材料、符号或传统如何获得新意义。",
+    "example": "My project recontextualises traditional scent materials through interactive digital media rather than presenting them as historical objects.",
+    "prompt": "用 recontextualise 写一句：你怎样把传统香材放进新的数字语境？"
   },
   "history": [
-    "Responsive Dreams 2026",
-    "Display Nature — Nicolas Gebbe",
-    "p5.js + shader: when 2D interface meets WebGL",
-    "V&A Digital Design Weekend 2026",
-    "Animex Screen 2026",
-    "Fen to Fire — Flag Fen",
     "Responsive Dreams 2026 | https://responsivedreams.com/",
     "Display Nature — Nicolas Gebbe | https://squareeyesfilm.com/shorts/display-nature/",
     "p5.js + shader: when 2D interface meets WebGL | https://discourse.processing.org/t/p5js-inconsistent-shader-behaviour-leading-to-program-crashes/49386",
     "V&A Digital Design Weekend 2026 | https://www.vam.ac.uk/blog/digital/digital-design-weekend-returns-to-va-south-kensington-this-september",
     "Animex Screen 2026 | https://filmfreeway.com/AnimexAwards",
-    "Fen to Fire — Flag Fen | https://flagfen.org.uk/events/fen-to-fire"
+    "Fen to Fire — Flag Fen | https://flagfen.org.uk/events/fen-to-fire",
+    "The Soil Sounds Back — Emily Stapleton-Jefferis | https://www.vam.ac.uk/event/y7y7b2gAYmp/the-soil-sounds-back-emily-stapleton-jefferis-sep-2026",
+    "Creation — Béla Klingl | https://vimeo.com/1200464893",
+    "p5.js 2.0 is now the default editor version | https://github.com/processing/p5.js/issues/7488",
+    "Goldsmiths Creative Technology Showcase at V&A | https://www.vam.ac.uk/event/dbzZy336bv/goldsmiths-creative-technology-showcase-sep-2026",
+    "ANITIME Animation Festival 2026 | https://filmfreeway.com/anitime",
+    "Laguna Obscura — Sara Tirelli | https://ars.electronica.art/negotiatinghumanity/en/view/laguna-obscura-39038ddb450c808583ede17db20b07cf/"
   ]
 }
