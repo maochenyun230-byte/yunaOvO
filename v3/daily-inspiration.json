@@ -1,63 +1,65 @@
 {
-  "date": "22 Sep 2026",
-  "hero": "今天看‘感知怎样被设计成机制’：脚步可以变成音乐，泥土可以成为逐帧动画，声音可以成为网页里的可塑材料，而未来世界也可以从废弃技术的残骸中长出来。",
+  "date": "23 Sep 2026",
+  "hero": "今天看‘痕迹、材料与系统怎样一起讲故事’：机器可以留下又擦除脚印，定格动画能把手工材质变成情绪，而交互作品最有力量的地方往往不是技术多复杂，而是规则足够清楚。",
   "items": [
     {
-      "category": "INTERACTIVE ART",
-      "title": "Stepping Out — Luke Jerram",
-      "summary": "Southbank Centre 的互动音乐作品把楼梯和地面变成乐器：观众走动会触发伦敦爱乐乐团录制的音阶与不同声部。",
-      "why": "它很适合你研究‘动作不是点击按钮，而是作品输入’：身体移动、空间位置和声音反馈组成一个简单但完整的交互回路。",
-      "action": "画一个 3 格机制图：身体动作 → 系统感知 → 感官反馈；再把脚步换成触摸植物、停留时间或鼠标速度。",
-      "url": "https://www.lukejerram.com/stepping-out/"
+      "category": "INTERACTIVE / KINETIC ART",
+      "title": "No Bird — UJOO+LIMHEEYOUNG",
+      "summary": "两台机器在沙面上循环行动：一台留下像鸟一样的脚印，另一台紧随其后把痕迹抹去，用极简单的机制讨论移动、进步与环境中的‘留下/消失’。",
+      "why": "它特别适合你现在的交互思路：作品不需要堆很多按钮，一个清晰的行为规则就能产生隐喻、时间感和情绪。",
+      "action": "给香项目写一个只有两步的循环规则，例如：触摸让植物显色 → 离开后颜色慢慢被‘擦除’，看看意义会不会比复杂功能更强。",
+      "url": "https://ars.electronica.art/center/en/no-bird/"
     },
     {
-      "category": "SHORT FILM / MATERIAL ANIMATION",
-      "title": "emory ‘dirt’ — Julia Fernandez",
-      "summary": "一支由约 300 块手工雕刻、绘制的陶瓷砖组成的逐帧动画；固定的泥土材料通过排列变化形成流动地景，并获 2026 Fest Anča 最佳音乐录像。",
-      "why": "它对你的香项目特别有启发：数字结果不一定抛弃手作，反而可以让一种真实材料成为动画语言和时间单位。",
-      "action": "选一种香材，只用同一种材料做 8 个连续状态；不要先画角色，先测试材料本身能不能讲‘变化’。",
-      "url": "https://filmfreeway.com/emory_dirt_julia_fernandez"
+      "category": "SHORT FILM / STOP MOTION",
+      "title": "The Girl Who Cried Pearls — Chris Lavis & Maciek Szczerbowski",
+      "summary": "NFB 免费上线的 17 分钟定格寓言：女孩的眼泪会变成珍珠，一个男孩在爱与贪欲之间做选择；影片以手工木偶、灯光和声音建立阴郁而精密的世界。",
+      "why": "值得拆的不是剧情反转，而是‘一个超现实规则’怎样撑起整部片：眼泪=珍珠之后，角色、道具、欲望和视觉都围绕同一规则生长。",
+      "action": "看完只记 3 件事：核心规则、重复出现的视觉符号、情绪转折时光线怎么变；用同样方法检查自己的毕业动画。",
+      "url": "https://www.nfb.ca/distribution/films/the-girl-who-cried-pearls/trailers/the-girl-who-cried-pearls-trailer-00m52s-en-c"
     },
     {
-      "category": "CREATIVE CODING",
-      "title": "p5.sound.js — sound as an interactive material",
-      "summary": "Processing Foundation 的 p5.sound.js 为 p5.js 提供声音播放、麦克风输入、合成、效果与音频分析，并提供可直接拆解的 examples。",
-      "why": "你的网站下一步可以不只‘播放声音’，而是让声音数据控制粒子密度、颜色、呼吸或植物生长，让听觉真正进入交互系统。",
-      "action": "先只做一个小实验：读取音量 amplitude，把它映射到一个圆或粒子的尺寸；成功后再接进香项目。",
-      "url": "https://github.com/processing/p5.sound.js"
+      "category": "CREATIVE CODING / WEBGPU",
+      "title": "p5.js WebGPU-to-WebGL fallback discussion",
+      "summary": "p5.js 团队本月正在讨论 WebGPU 不可用时自动回退到 WebGL，让较新的 GPU 功能与更广泛的浏览器兼容性之间取得平衡。",
+      "why": "这正是作品集里容易忽略的‘真实交互设计’：效果不仅要酷，还要考虑不同设备能不能运行；技术限制本身也是设计决策。",
+      "action": "以后做 WebGPU/Shader 实验时，加一个最简单的 fallback 测试，并在 process page 记录‘理想效果 vs 可访问版本’。",
+      "url": "https://github.com/processing/p5.js/issues/9175"
     },
     {
-      "category": "EXHIBITION",
-      "title": "EVENT-0 Manual Override — Ruby Chen",
-      "summary": "Ruby Chen 在伦敦的新展用雕塑、声音与装置构造一个从 21 世纪技术废墟中生长出的未来生态，展至 30 Oct。",
-      "why": "值得看她怎样先建立一个世界的规则，再让不同媒介成为同一世界的证据；这比把网页、3D、声音各做一块更完整。",
-      "action": "给自己的香项目写 3 条 world rules：这个世界里什么会生长、什么会留下痕迹、观众做什么会改变它。",
-      "url": "https://lumka.com/exhibitions/rubychen-event-0-manualoverrride"
+      "category": "DIGITAL ART / EXHIBITION",
+      "title": "When the Void Gazes Back — Eunjo Lee",
+      "summary": "V&A 的新委托把佛教藏品、游戏图形、数字雕塑、声音与部分 3D 打印再生陶土结合，想象 AI、业力与非人意识交织的未来世界；展至 18 Oct。",
+      "why": "它和你的申请方向非常接近：传统文化没有被做成‘资料展示’，而是先提取思想，再通过数字世界、实体材料和互动重新语境化。",
+      "action": "重点研究它如何从传统概念走到媒介选择；然后给自己的香项目写一条链：传统概念 → 当代问题 → 数字行为 → 实体结果。",
+      "url": "https://londondesignfestival.com/activities/eunjo-lee-digital-molting",
+      "deadline": "On view until 18 Oct 2026"
     },
     {
-      "category": "OPEN CALL — DEADLINE TODAY",
-      "title": "Cardiff Animation Festival 2027 — Student Short Animated Film",
-      "summary": "Cardiff Animation Festival 2027 的学生动画征集今天 22 Sep 截止，接受国际学生动画，并设 Student Short Animated Film 类别。",
-      "why": "这是英国本地、明确接受学生作品的动画节；如果你已有完成度高的旧片，可以直接检查资格，不需要为了比赛临时做新片。",
-      "action": "只做一次快速判断：现成作品符合规则就今天提交；没有合适成片就跳过，不要打乱作品集主线。",
-      "url": "https://www.cardiffanimation.com/submit",
-      "deadline": "22 Sep 2026"
+      "category": "COMPETITION / UNDERGRADUATE",
+      "title": "CutOut Fest 2026 — Animated Bachelor's Film",
+      "summary": "CutOut Fest 的本科动画类别明确只收 undergraduate 学位期间制作的动画，另有实验动画类别；常规截止 15 Oct，当前标准报名费 US$20。",
+      "why": "资格与你匹配，而且本科专属类别比和成熟职业导演直接竞争更合理；但它不是免费，所以只值得投已经完成、你自己也满意的片子。",
+      "action": "不要为它临时做新片：从现有成片里挑 1 部，先核对完成年份、片长和学生身份，再决定 US$20 是否值得。",
+      "url": "https://filmfreeway.com/CutOutFestAnimationFilmFest",
+      "deadline": "15 Oct 2026"
     },
     {
-      "category": "WILDCARD / ANIMATION HISTORY",
-      "title": "A Nicely Built City — William Kentridge",
-      "summary": "William Kentridge 24 Sep 在伦敦首映其 Drawings for Projection 系列第 12 部 stop-animation，并同时展出与影片相连的素描、雕塑和纸上作品。",
-      "why": "Kentridge 很适合你重新理解‘动画作品集’：一部动画可以从绘画过程长出来，又反过来扩展成空间、物件和展览，而不是只剩最终影片。",
-      "action": "看他的 making 方式后，挑毕业动画一个镜头，想 2 个能离开屏幕存在的版本：实体材料、装置或互动痕迹。",
-      "url": "https://goodman-gallery.com/exhibitions/a-nicely-built-city-william-kentridge"
+      "category": "WILDCARD / VISUAL CULTURE",
+      "title": "NIGO: From Japan with Love — Design Museum",
+      "summary": "Design Museum 用 700 多件物品梳理 NIGO 三十年的跨媒介实践，从原宿街头文化、音乐和服装一路连接到陶瓷、收藏与传统工艺，展至 4 Oct。",
+      "why": "它能帮你跳出‘作品集=四个独立项目’的思路：一个人的审美系统可以跨服装、物件、空间、音乐和收藏持续生长，同时仍保持非常清楚的个人身份。",
+      "action": "看展或看资料时不要只存好看的图；找出 3 个跨不同媒介仍反复出现的 NIGO 视觉/文化规则，再想自己的规则是什么。",
+      "url": "https://designmuseum.org/exhibitions/nigo-from-japan-with-love",
+      "deadline": "On view until 4 Oct 2026"
     }
   ],
   "word": {
-    "word": "embodied",
-    "pronunciation": "/ɪmˈbɒdid/",
-    "meaning": "具身的；通过身体、动作和实际感知被体验或表达的。交互与沉浸式设计评论中很常用。",
-    "example": "I want the scent archive to become an embodied experience in which visitors discover memories through movement, sound and touch.",
-    "prompt": "用 embodied 说一句：你的作品怎样让观众用身体而不只是眼睛体验？"
+    "word": "residue",
+    "pronunciation": "/ˈrezɪdjuː/",
+    "meaning": "残留物；残余痕迹。艺术评论中可指动作、记忆、材料或体验结束后留下的东西。",
+    "example": "I want each interaction to leave a visual residue, so the interface slowly becomes an archive of previous visitors.",
+    "prompt": "用 residue 说一句：观众离开你的作品后，会留下什么痕迹？"
   },
   "history": [
     "Responsive Dreams 2026 | https://responsivedreams.com/",
@@ -77,6 +79,12 @@
     "WebGPU — W3C Candidate Recommendation Draft | https://www.w3.org/TR/webgpu/",
     "SLIPSTREAM: Uncharted Realities & the Eternal Now — arebyte | https://www.arebyte.com/whats-on",
     "Animation Dingle 2027 StINGs — MOVE ME | https://animationdingle.com/stings/",
-    "This Is Still Not a Pipe: The Afterlife of Magritte | https://gagosian.com/exhibitions/2026/this-is-still-not-a-pipe-the-afterlife-of-magritte/"
+    "This Is Still Not a Pipe: The Afterlife of Magritte | https://gagosian.com/exhibitions/2026/this-is-still-not-a-pipe-the-afterlife-of-magritte/",
+    "Stepping Out — Luke Jerram | https://www.lukejerram.com/stepping-out/",
+    "emory ‘dirt’ — Julia Fernandez | https://filmfreeway.com/emory_dirt_julia_fernandez",
+    "p5.sound.js — sound as an interactive material | https://github.com/processing/p5.sound.js",
+    "EVENT-0 Manual Override — Ruby Chen | https://lumka.com/exhibitions/rubychen-event-0-manualoverrride",
+    "Cardiff Animation Festival 2027 — Student Short Animated Film | https://www.cardiffanimation.com/submit",
+    "A Nicely Built City — William Kentridge | https://goodman-gallery.com/exhibitions/a-nicely-built-city-william-kentridge"
   ]
 }
